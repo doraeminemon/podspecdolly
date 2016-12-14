@@ -18,7 +18,7 @@ Or install it yourself as:
 
     $ gem install podspecdolly
 
-<I didn't release it on rubygems.org yet. Download or clone this git>
+I didn't release it on rubygems.org yet. Download or clone this git
 
 ## Usage
 
