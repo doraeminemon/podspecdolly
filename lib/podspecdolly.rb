@@ -1,5 +1,5 @@
 require "podspecdolly/version"
+require 'podspecdolly/interface'
 
 module Podspecdolly
-  # Your code goes here...
 end

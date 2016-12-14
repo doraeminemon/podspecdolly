@@ -12,7 +12,5 @@ module Podspecdolly
       pods
     end
 
-
-
   end
 end

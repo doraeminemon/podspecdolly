@@ -12,9 +12,7 @@ module Podspecdolly
     def request
       url = "https://api.github.com/repos/CocoaPods/Specs/contents/Specs/#{@pod_path}#{@podname}"
       pod_response = Unirest.get( url , headers: {"Accept" => "application/json"})
-      p pod_response.code
-      p url
-
+      check_responsecode_success(pod_response,"URL to Cocoapod spec with #{@podname} is invalid. Check pod name again ?")
       pod_object = pod_response.body
       if pod_object.kind_of?(Array)
         FileUtils::mkdir_p "./Specs/#{@podname}"
@@ -24,7 +22,7 @@ module Podspecdolly
           unless File.directory?("./Specs/#{@podname}/#{version_name}")
             FileUtils::mkdir_p "./Specs/#{@podname}/#{version_name}"
             version_response = Unirest.get url
-            p url
+            check_responsecode_success(version_response, "Request for version #{version_name} failed.")
             version_object = version_response.body
             if version_object.kind_of?(Array)
               version_object.each do |object|
@@ -41,6 +39,13 @@ module Podspecdolly
       end
     end
 
+    def check_responsecode_success(response, message)
+      unless response.code.between?(200,299)
+        p message
+        p response.body
+        abort
+      end
+    end
 
   end
 end

@@ -2,22 +2,26 @@ require 'thor'
 require 'podspecdolly/shard'
 require 'podspecdolly/dependencies'
 require 'podspecdolly/podspec_getter'
-require 'podspecdolly/shard'
 
 module Podspecdolly
   class Interface < Thor
-    desc "clone", "run the cloning podspec process"
-    def clone
-      @podfile = Dir::glob("podfile").first
-
+    package_name 'podspecdolly'
+    desc "clone PODFILE SHARD_LENGTH", "clone the pods from PODFILE with SHARD_LENGTH"
+    def clone(podfile = 'podfile', shard_length = [1,1,1])
+      @podfile = Dir::glob(podfile).first
       pods = Dependencies.new(@podfile).validate
-      pods.each do |pod|
-        p 'pod ' << pod
-        podpath = Shard.new(pod, [1,1,1]).podpath
-        p 'podpath ' << podpath
-        requester = Podspec_getter.new(pod,podpath)
-        requester.request
+      if pods.count == 0
+        p "Couldn't find any valid pod declaration in #{@podfile.to_s}"
+        abort
+      else
+        pods.each do |pod|
+          p 'Checking up for pod ' << pod
+          podpath = Shard.new(pod, shard_length).podpath
+          requester = Podspec_getter.new(pod,podpath)
+          requester.request
+        end
       end
     end
+
   end
 end
