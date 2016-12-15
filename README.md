@@ -18,8 +18,6 @@ Or install it yourself as:
 
     $ gem install podspecdolly
 
-I didn't release it on rubygems.org yet. Download or clone this git
-
 ## Usage
 
 - cd to a folder with a podfile
