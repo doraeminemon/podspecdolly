@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Podspecdolly by doraeminemon</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Podspecdolly</h1>
+        <p>ruby gem to clone a podspec</p>
+
+        <p class="view"><a href="https://github.com/doraeminemon/podspecdolly">View the Project on GitHub <small>doraeminemon/podspecdolly</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/doraeminemon/podspecdolly/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/doraeminemon/podspecdolly/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/doraeminemon/podspecdolly">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="podspecdolly" class="anchor" href="#podspecdolly" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Podspecdolly</h1>
+
+<p>As the global podspec on github of Cocoapods is growing larger, any process involving cocoapod is a pain especially if your project has 10 or more dependencies. The option is to run a local or self-hosted podspec. This tool will allow you to rely totally on your own podspec by cloning only the pods that you want, based on a podfile, without the need to send a pull request to Cocoapods/Specs</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">gem</span> <span class="pl-s"><span class="pl-pds">'</span>podspecdolly<span class="pl-pds">'</span></span></pre></div>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install podspecdolly
+</code></pre>
+
+<p>I didn't release it on rubygems.org yet. Download or clone this git</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<ul>
+<li>cd to a folder with a podfile</li>
+<li>$ podspecdolly clone</li>
+<li>All currently missing version of podspec will be download to a Specs folder</li>
+</ul>
+
+<h2>
+<a id="development" class="anchor" href="#development" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development</h2>
+
+<p>Features that are missing and are planned for next release, arrange from most to least prioritized :</p>
+
+<ul>
+<li>Automatically download pod dependencies</li>
+<li>Allow clone from other sources</li>
+<li>Writing tests</li>
+</ul>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/doraeminemon/podspecdolly">https://github.com/doraeminemon/podspecdolly</a>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the <a href="http://contributor-covenant.org">Contributor Covenant</a> code of conduct.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/doraeminemon">doraeminemon</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
